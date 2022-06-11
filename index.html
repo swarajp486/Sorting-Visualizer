@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Sorting-Visualizer</title>
+</head>
+<body>
+    <div class="head">
+        <h2>SS Visualizer</h2>
+        <h2>Sorting</h2>
+        <img src="icon.jpg" alt="">
+    </div>
+    <div class="option">
+    <select class="op" name="algo"  id="algos">
+        <option selected disabled>Sorting</option>
+        <option value="Bubble">Bubble Sort</option>
+        <option value="Insertion">Insertion Sort</option>
+        <option value="Selection">Selection Sort</option>
+        <option value="Merge">Merge Sort</option>
+        
+    </select>
+    </div>
+    <div id="bars" class="flex-container">
+        
+    </div>
+    <div class="btn-container">
+        <span>
+        <label for="count">Number of lines: </label>
+        <input id="a_size" type="number"  value="50">
+        </span>
+        <span id="speed">Speed
+            <input id="a_speed" type="range"min="20" max="300" stepDown=10 value=60>
+        </span>
+        <button type="submit" id="reset">Reset</button>
+        <button type="submit" id="start">Start</button>
+    </div>
+
+    <script src="js_files/main.js"></script>
+    <script src="js_files/bubble.js"></script>
+    <script src="js_files/insertion.js"></script>
+    <script src="js_files/merge.js"></script>
+    <script src="js_files/quick.js"></script>
+    <script src="js_files/selection.js"></script>
+
+    
+</body>
+</html>
