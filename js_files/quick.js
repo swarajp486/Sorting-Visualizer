@@ -33,15 +33,15 @@ async function partitionLomuto(ele, l, r){
     console.log(`i = ${i}`, typeof(i));
     // color
     ele[r].style.background = 'pink';
-    ele[i].style.background = 'green';
+    ele[i].style.background = 'cyan';
 
     // pauseChamp
     await waitforme(delay);
     
     // color
     for(let k = 0; k < ele.length; k++){
-        if(ele[k].style.background != 'green')
-            ele[k].style.background = 'cyan';
+        if(ele[k].style.background != 'cyan')
+            ele[k].style.background = 'lightgreen';
     }
 
     return i;
@@ -56,8 +56,8 @@ async function quickSort(ele, l, r){
     }
     else{
         if(l >= 0 && r >= 0 && l <ele.length && r <ele.length){
-            ele[r].style.background = 'green';
-            ele[l].style.background = 'green';
+            ele[r].style.background = 'cyan';
+            ele[l].style.background = 'cyan';
         }
     }
 }

@@ -15,29 +15,31 @@
         <img src="icon.jpg" alt="">
     </div>
     <div class="option">
-    <select class="op" name="algo"  id="algos">
-        <option selected disabled>Sorting</option>
-        <option value="Bubble">Bubble Sort</option>
-        <option value="Insertion">Insertion Sort</option>
-        <option value="Selection">Selection Sort</option>
-        <option value="Merge">Merge Sort</option>
-        
-    </select>
-    </div>
-    <div id="bars" class="flex-container">
-        
-    </div>
-    <div class="btn-container">
         <span>
-        <label for="count">Number of lines: </label>
-        <input id="a_size" type="number"  value="50">
+            <label for="count">Number of lines: </label>
+            <input id="a_size" type="number"  value="50">
         </span>
+       
+        <select class="op" name="algo"  id="algos">
+            
+            <option value="Bubble">Bubble Sort</option>
+            <option value="Insertion">Insertion Sort</option>
+            <option value="Selection">Selection Sort</option>
+            <option value="Merge">Merge Sort</option>
+            <option value="Quick">Quick Sort</option>
+            
+        </select>
+        
         <span id="speed">Speed
             <input id="a_speed" type="range"min="20" max="300" stepDown=10 value=60>
         </span>
         <button type="submit" id="reset">Reset</button>
         <button type="submit" id="start">Start</button>
     </div>
+    <div id="bars" class="flex-container">
+        
+    </div>
+    
 
     <script src="js_files/main.js"></script>
     <script src="js_files/bubble.js"></script>

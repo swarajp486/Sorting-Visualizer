@@ -5,6 +5,9 @@ function swap(el1, el2) {
     let temp = el1.style.height;
     el1.style.height = el2.style.height;
     el2.style.height = temp;
+    let temp1=el1.style.marginTop;
+    el1.style.marginTop=el2.style.marginTop;
+    el2.style.marginTop=temp1;
     
 }
 
@@ -63,6 +66,7 @@ function createNewArray(noOfBars = 60) {
     for (let i = 0; i < noOfBars; i++) {
         const bar = document.createElement("div");
         bar.style.height = `${array[i]*2}px`;
+        bar.style.marginTop=`${350-array[i]*2-1}px`
         bar.classList.add('bar');
         bar.classList.add('flex-item');
         bar.classList.add(`barNo${i}`);
@@ -77,36 +81,80 @@ function deleteChild() {
 }
 
 var start_st=document.querySelector('#start')
-start_st.addEventListener('click',runalgo)
-function runalgo()
+function disableSize(){
+    document.querySelector("#a_size").disabled = true;
+}
+
+// Enables size slider used in conjunction with disable
+function enableSize(){
+    document.querySelector("#a_size").disabled = false;
+}
+function disableReset(){
+    document.querySelector("#reset").disabled = true;
+}
+
+// Enables size slider used in conjunction with disable
+function enableReset(){
+    document.querySelector("#reset").disabled = false;
+}
+
+function disableStart(){
+    document.querySelector("#start").disabled = true;
+}
+
+// Enables size slider used in conjunction with disable
+function enableStart(){
+    document.querySelector("#start").disabled = false;
+}
+start_st.addEventListener('click',async function(){
+    let st_name=document.getElementById('algos');
+    let alog=st_name.value;
+    st_name.disabled=true;
+    disableSize();
+    disableReset();
+    disableStart();
+    await runalgo(alog);
+    st_name.disabled=false;
+    enableSize();
+    enableReset()
+    enableStart()
+    
+    
+   
+})
+async function runalgo(alog)
 {
     
 
-    let st_name=document.getElementById('algos')
     
-    switch(st_name.value)
+    
+    switch(alog)
     {
-        case "Bubble":bubble();
+        case "Bubble":await bubble();
+        console.log('reach');
+       
+                   
                     break;
-        case "Selection":selection();
+        case "Selection":await selection();
                         break;
-        case "Insertion":insertion();
+        case "Insertion":await insertion();
                         break;
         case "Merge":
             let ele = document.querySelectorAll('.bar');
             let l = 0;
             let r = ele.length - 1;
-            mergeSort(ele,l,r);
+            await mergeSort(ele,l,r);
             break;
         case "Quick":
             let ele1 = document.querySelectorAll('.bar');
             let l1 = 0;
-            let r1 = ele.length - 1;
-            quickSort(ele1,l1,r1);
-                        break;
+            let r1 = ele1.length - 1;
+            await  quickSort(ele1,l1,r1);
+            break;
     }
     
 }
+
 
 let restart_bt=document.querySelector('#reset');
 

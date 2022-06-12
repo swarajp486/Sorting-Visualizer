@@ -16,21 +16,21 @@ async function selection(){
                 console.log('In if condition height comparision');
                 if(min_index !== i){
                     // new min_index is found so change prev min_index color back to normal
-                    ele[min_index].style.background = 'cyan';
+                    ele[min_index].style.background = 'pink';
                 }
                 min_index = j;
             } 
             else{
                 // if the currnent comparision is more than min_index change is back to normal
-                ele[j].style.background = 'cyan';
+                ele[j].style.background = 'pink';
             }   
         }
         await waitforme(delay);
         swap(ele[min_index], ele[i]);
         // change the min element index back to normal as it is swapped 
-        ele[min_index].style.background = 'cyan';
+        ele[min_index].style.background = 'pink';
         // change the sorted elements color to green
-        ele[i].style.background = 'green';
+        ele[i].style.background = 'cyan';
     }
 }
 

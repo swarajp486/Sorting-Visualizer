@@ -7,6 +7,8 @@ async function merge(ele, low, mid, high){
     console.log(`n1=${n1}, n2=${n2}`);
     let left = new Array(n1);
     let right = new Array(n2);
+    let marginl=new Array(n1);
+    let marginr=new Array(n2);
 
     for(let i = 0; i < n1; i++){
         await waitforme(delay);
@@ -15,6 +17,7 @@ async function merge(ele, low, mid, high){
         // color
         ele[low + i].style.background = 'orange';
         left[i] = ele[low + i].style.height;
+        marginl[i]=ele[low+i].style.marginTop;
     }
     for(let i = 0; i < n2; i++){
         await waitforme(delay);
@@ -23,6 +26,7 @@ async function merge(ele, low, mid, high){
         // color
         ele[mid + 1 + i].style.background = 'yellow';
         right[i] = ele[mid + 1 + i].style.height;
+        marginr[i]=ele[mid+1+i].style.marginTop;
     }
     await waitforme(delay);
     let i = 0, j = 0, k = low;
@@ -37,13 +41,14 @@ async function merge(ele, low, mid, high){
             console.log('In merge while loop if');
             // color
             if((n1 + n2) === ele.length){
-                ele[k].style.background = 'green';
+                ele[k].style.background = 'cyan';
             }
             else{
                 ele[k].style.background = 'lightgreen';
             }
             
             ele[k].style.height = left[i];
+            ele[k].style.marginTop = marginl[i];
             i++;
             k++;
         }
@@ -51,12 +56,13 @@ async function merge(ele, low, mid, high){
             console.log('In merge while loop else');
             // color
             if((n1 + n2) === ele.length){
-                ele[k].style.background = 'green';
+                ele[k].style.background = 'cyan';
             }
             else{
                 ele[k].style.background = 'lightgreen';
             } 
             ele[k].style.height = right[j];
+            ele[k].style.marginTop = marginr[j];
             j++;
             k++;
         }
@@ -66,12 +72,13 @@ async function merge(ele, low, mid, high){
         console.log("In while if n1 is left");
         // color
         if((n1 + n2) === ele.length){
-            ele[k].style.background = 'green';
+            ele[k].style.background = 'cyan';
         }
         else{
             ele[k].style.background = 'lightgreen';
         }
         ele[k].style.height = left[i];
+        ele[k].style.marginTop = marginl[i];
         i++;
         k++;
     }
@@ -80,12 +87,13 @@ async function merge(ele, low, mid, high){
         console.log("In while if n2 is left");
         // color
         if((n1 + n2) === ele.length){
-            ele[k].style.background = 'green';
+            ele[k].style.background = 'cyan';
         }
         else{
             ele[k].style.background = 'lightgreen';
         }
         ele[k].style.height = right[j];
+        ele[k].style.marginTop = marginr[j];
         j++;
         k++;
     }
