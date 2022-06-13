@@ -11,7 +11,7 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 1px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Signika Negative', sans-serif;
     background: hsl(180deg 10% 10%);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgb(56, 58, 58),
@@ -36,7 +36,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    font-size: 20px;
+    font-size: 25px;
     
     
     
@@ -57,7 +57,6 @@ body{
     border: none;
 
 } 
-
 
 .flex-container{
     margin-top: 20px;
